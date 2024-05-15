@@ -83,11 +83,11 @@ contract Moola is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable {
     ///      - Inherits from Ownable for ownership functionality.
     /// 
     constructor()
-        ERC20("P2PCash", "Moola")
-        ERC20Permit("P2PCash")
+        ERC20("Moola", "MOOLA")
+        ERC20Permit("Moola")
         Ownable(_msgSender())
     {
-        _mint(_msgSender(), 100_000_000 * 1e18);
+        _mint(_msgSender(), 600_000_000 * 1e18);
     }
 
     /**
@@ -103,14 +103,6 @@ contract Moola is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable {
         amountToClaim[_sender] = 0;
         totalClaimed[_sender] += amount;            
         _mint(_sender, amount);
-    }
-
-    /// @notice Admin can mint tokens to anyone
-    /// @dev  Ristrict to only owner of the contract
-    /// @param to address of user on which he wants to mint
-    /// @param amount amount of tokens that he wants to mint
-    function mint(address to, uint256 amount) external onlyOwner {
-        _mint(to, amount);
     }
 
     /// @notice Admin can set Users and there Claimable Rewards

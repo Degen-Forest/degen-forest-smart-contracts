@@ -77,7 +77,7 @@ contract Moola is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable {
     }
 
     /// 
-    /// @dev Constructor for the P2PCash contract.
+    /// @dev Constructor for the Moola contract.
     ///      - Inherits from ERC20 for basic ERC20 functionality.
     ///      - Inherits from ERC20Permit for permit functionality.
     ///      - Inherits from Ownable for ownership functionality.
